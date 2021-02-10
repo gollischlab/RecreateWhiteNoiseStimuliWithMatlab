@@ -4,6 +4,7 @@ Matlab code to recreate random number lists for white noise stimuli in the lab
 This repository contains Matlab code to recreate the lists of random numbers used in white-noise experiments in the Gollisch lab.
 The random-number sequences are needed for analyzing the spike responses of recorded cells under white-noise stimulation.
 
+### Binary white noise
 Binary white noise (as sequences of 1 and -1) is recreated via the function 
 stimulus = recreateBinaryWhiteNoiseStimulus(Nx, Ny, Nframes, seed),
 where Nx, Ny, and Nframes are required parameters that specify the number of pixels in x and y and the number of frames (time).
@@ -15,5 +16,7 @@ If not or if a different operating system is used, the mex file might need to be
 mex recreateBinaryWhiteNoiseStimulus.cpp
 An example of how to use it is given in sample_code_for_recreating_white_noise_stimuli.m.
 
-Gaussian white noise (zero mean, unity standard deviation) is handled in essentially the same way by the function
+### Gaussian white noise
+Gaussian white noise (zero mean, unity standard deviation) is handled in essentially the same way as the binary white noise (see above).
+Use the function
 stimulus = recreateGaussianWhiteNoiseStimulus(Nx, Ny, Nframes, seed).
